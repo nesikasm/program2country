@@ -31,3 +31,125 @@
             font-size: 18px;
             line-height: 1.6;
         }
+
+        .country-list {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .country-list a {
+            color: #2575fc;
+            text-decoration: none;
+            font-weight: bold;
+            margin: 5px;
+            font-size: 20px;
+        }
+
+        .country-list a:hover {
+            color: #6a11cb;
+        }
+
+        .country-info {
+            display: none;
+            margin-top: 30px;
+            font-size: 18px;
+            line-height: 1.6;
+            text-align: justify;
+        }
+
+        .country-info h2 {
+            color: #4CAF50;
+        }
+
+        .back-link {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .back-link a {
+            color: #2575fc;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .back-link a:hover {
+            color: #6a11cb;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Explore the Countries</h1>
+
+        <div class="country-list">
+            <a href="javascript:void(0);" onclick="showCountryInfo('india')">India</a>
+            <a href="javascript:void(0);" onclick="showCountryInfo('usa')">United States</a>
+            <a href="javascript:void(0);" onclick="showCountryInfo('brazil')">Brazil</a>
+            <a href="javascript:void(0);" onclick="showCountryInfo('china')">China</a>
+            <a href="javascript:void(0);" onclick="showCountryInfo('japan')">Japan</a>
+            <a href="javascript:void(0);" onclick="showCountryInfo('germany')">Germany</a>
+        </div>
+
+        <!-- India Info -->
+        <div id="india" class="country-info">
+            <h2>About India</h2>
+            <p>India is a country located in South Asia. It is the seventh-largest country by land area and the second-most populous country in the world, with more than 1.4 billion people. India is known for its diverse culture, rich history, and various languages spoken across the nation. The capital of India is New Delhi, and the official languages are Hindi and English. The country is famous for its monuments like the Taj Mahal, its festivals like Diwali and Holi, and its cuisine, which is known worldwide for its use of spices.</p>
+            <div class="back-link"><a href="javascript:void(0);" onclick="hideCountryInfo('india')">Back to Countries List</a></div>
+        </div>
+
+        <!-- United States Info -->
+        <div id="usa" class="country-info">
+            <h2>About the United States</h2>
+            <p>The United States of America (USA) is a country primarily located in North America. It is the third-largest country by total area and population in the world. The capital city is Washington, D.C., and the country is known for its cultural diversity, technological innovations, and leadership in various global industries. Iconic landmarks such as the Statue of Liberty and the White House are found here. The country is also known for its federal government, economic power, and vast natural landscapes.</p>
+            <div class="back-link"><a href="javascript:void(0);" onclick="hideCountryInfo('usa')">Back to Countries List</a></div>
+        </div>
+
+        <!-- Brazil Info -->
+        <div id="brazil" class="country-info">
+            <h2>About Brazil</h2>
+            <p>Brazil is the largest country in South America, covering 8.5 million square kilometers. It is known for its Amazon rainforest, the largest tropical rainforest in the world. The country is famous for its cultural diversity, the carnival festival, football (soccer) passion, and beautiful beaches. The capital is Brasília, and the official language is Portuguese.</p>
+            <div class="back-link"><a href="javascript:void(0);" onclick="hideCountryInfo('brazil')">Back to Countries List</a></div>
+        </div>
+
+        <!-- China Info -->
+        <div id="china" class="country-info">
+            <h2>About China</h2>
+            <p>China is the most populous country in the world, with over 1.4 billion people. It is known for its ancient history, being home to one of the world’s oldest continuous civilizations. The Great Wall of China, the Forbidden City, and other historic landmarks are famous worldwide. The capital city is Beijing, and the official language is Mandarin Chinese.</p>
+            <div class="back-link"><a href="javascript:void(0);" onclick="hideCountryInfo('china')">Back to Countries List</a></div>
+        </div>
+
+        <!-- Japan Info -->
+        <div id="japan" class="country-info">
+            <h2>About Japan</h2>
+            <p>Japan is an island nation in East Asia, known for its unique culture, technology, and traditions. Famous for its cherry blossoms, Mount Fuji, and historical landmarks, Japan is a world leader in innovation and technology. The capital city is Tokyo, and the official language is Japanese.</p>
+            <div class="back-link"><a href="javascript:void(0);" onclick="hideCountryInfo('japan')">Back to Countries List</a></div>
+        </div>
+
+        <!-- Germany Info -->
+        <div id="germany" class="country-info">
+            <h2>About Germany</h2>
+            <p>Germany is a country located in Central Europe and is known for its rich history, advanced technology, and culture. It is famous for its contributions to philosophy, music, and engineering. Germany is a leader in the automotive industry, with companies like Volkswagen, BMW, and Mercedes-Benz. The capital is Berlin, and the official language is German.</p>
+            <div class="back-link"><a href="javascript:void(0);" onclick="hideCountryInfo('germany')">Back to Countries List</a></div>
+        </div>
+    </div>
+
+    <script>
+        function showCountryInfo(country) {
+            // Hide all country info
+            const allCountryInfos = document.querySelectorAll('.country-info');
+            allCountryInfos.forEach(info => info.style.display = 'none');
+
+            // Show the selected country info
+            const selectedCountryInfo = document.getElementById(country);
+            selectedCountryInfo.style.display = 'block';
+        }
+
+        function hideCountryInfo(country) {
+            const selectedCountryInfo = document.getElementById(country);
+            selectedCountryInfo.style.display = 'none';
+        }
+    </script>
+
+</body>
+</html>
